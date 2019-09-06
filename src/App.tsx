@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Main from './main'
+import HooksTodo from './hooks-todo'
+import ReduxThunkTodo from './redux-thunk-todo'
+import ReduxSagaTodo from './redux-saga-todo'
+
+const App = () => (
+    <HashRouter>
+        <Switch>
+            <Route exact path='/' component={Main}/>
+            <Route exact path='/hooks' component={HooksTodo}/>
+            <Route exact path='/redux-thunk' component={ReduxThunkTodo}/>
+            <Route exact path='/redux-saga' component={ReduxSagaTodo}/>
+            <Route component={() => <p>404 Not Found</p>}/>
+        </Switch>
+    </HashRouter>
+);
 
 export default App;
