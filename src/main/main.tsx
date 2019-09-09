@@ -5,7 +5,8 @@ const Main = () => (
     <>
         <Link to='/hooks'>hooks</Link>or
         <Link to='/redux-thunk'>redux-thunk</Link>or
-        <Link to='/redux-saga'>redux-saga</Link>
+        <Link to='/redux-saga'>redux-saga</Link>or
+        <Link to='/context-api'>context-api</Link>
     </>
 )
 
