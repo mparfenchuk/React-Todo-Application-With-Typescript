@@ -1,7 +1,10 @@
 import React, { useReducer } from 'react';
-import { Link } from 'react-router-dom';
+
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 import { initialState, reducer } from '../app/reducer';
+import Navigation from '../app/navigation';
 
 import { TodoStateContext, TodoDispatchContext } from './store';
 
@@ -16,11 +19,15 @@ const Main = () => {
     return (
         <TodoStateContext.Provider value={state}>
             <TodoDispatchContext.Provider value={dispatch}>
-                <Link to='/'>home</Link>
-                <p>Todos With Context Api</p>
-                <Form />
-                <List />
-                <ResetButton />
+                <Container maxWidth="sm">
+                    <Navigation />
+                    <Typography variant="h5">
+                        Todos With Context Api
+                    </Typography>
+                    <Form />
+                    <List />
+                    <ResetButton />
+                </Container>
             </TodoDispatchContext.Provider>
         </TodoStateContext.Provider>
     )
